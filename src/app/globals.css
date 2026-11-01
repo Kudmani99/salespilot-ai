@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030712; /* Tailwind gray-950 */
+  --foreground: #f3f4f6; /* Tailwind gray-100 */
+  --card: #0b0f19; /* Custom dark card background */
+  --card-border: #1f2937; /* Tailwind gray-800 */
+  --brand: #3b82f6; /* Tailwind blue-500 */
+  --brand-hover: #2563eb; /* Tailwind blue-600 */
+  --brand-glow: rgba(59, 130, 246, 0.15);
+  --accent: #06b6d4; /* Tailwind cyan-500 */
+}
+
+@theme {
+  --color-bg-dark: var(--background);
+  --color-card-dark: var(--card);
+  --color-border-dark: var(--card-border);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-accent: var(--accent);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Custom glowing and utility styles */
+.glow-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 15px 0 rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #a5f3fc 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
